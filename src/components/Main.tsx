@@ -30,7 +30,7 @@ const StyledMain=styled.main`
     }
 `;
 
-const Main = ({ children }) => {
+const Main = ({ children }:{children:unknown}) => {
     return <StyledMain>{children}</StyledMain>;
 }
 export default Main;

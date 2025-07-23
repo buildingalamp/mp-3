@@ -1,10 +1,3 @@
-import styled from "styled-components";
-
-const StyledHome=styled.main`
-    width: 70%;
-    height: 100vh;
-`;
-
 export default function Home() {
     return (
         <>
