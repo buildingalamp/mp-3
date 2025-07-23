@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react"
 
 const StyledMain=styled.main`
     height: 100vh;
@@ -30,7 +31,7 @@ const StyledMain=styled.main`
     }
 `;
 
-const Main = ({ children }:{children:unknown}) => {
+const Main = ({ children }:{ children: React.ReactNode }) => {
     return <StyledMain>{children}</StyledMain>;
 }
 export default Main;

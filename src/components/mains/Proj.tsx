@@ -2,9 +2,9 @@ import { useState } from 'react';
 import styled from "styled-components";
 
 function useCalculator() {
-  const [numOne, setNumOne] = useState('');
-  const [numTwo, setNumTwo] = useState('');
-  const [result, setResult] = useState('');
+  const [numOne, setNumOne] = useState<number | string>('');
+  const [numTwo, setNumTwo] = useState<number | string>('');
+  const [result, setResult] = useState<number | string>('');
 
   const doAdd = () => setResult(Number(numOne) + Number(numTwo));
   const doSubtract = () => setResult(Number(numOne) - Number(numTwo));
@@ -61,10 +61,10 @@ const StyledButtonDiv=styled.div`
   flex-wrap: wrap;
 `
 
-const StyledOutput=styled.h4<{result: number}>`
+const StyledOutput=styled.h4<{result: number | string}>`
   margin-top: 15px;
   text-align: center;
-  color: ${({ result }) => (result < 0 ? 'red' : 'black')};
+  color: ${({ result }) => (typeof result === 'number' && result < 0 ? 'red' : 'black')};
 `
 
 export default function Calculator() {
